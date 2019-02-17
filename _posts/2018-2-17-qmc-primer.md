@@ -16,29 +16,29 @@ $$
   \hat{H}\Psi(\mathbf{x}, t) = i\hbar\frac{\partial \Psi(\mathbf{x}, t)}{\partial t}.
 $$
 
-On the left-hand side, we have the Hamiltonian operator $\hat{H}$, acting on the *wave function* \(\Psi\). On the right-hand side, we have the time evolution of the wave function. All you really need to know is that \(\hat{H}\) is a linear operator (in the sense of \(d/dx\), or a matrix), which encodes the energetic configuration of the system under consideration. For example, if we're looking at the quantum behavior of a magnet, \(\hat{H}\) will somehow involve the spins of each particle. In a molecular system - which is what we'll be mostly concerned with - it will involve the positions of the electrons and nuclei that make up the molecule. 
+On the left-hand side, we have the Hamiltonian operator $\hat{H}$, acting on the *wave function* $\Psi$. On the right-hand side, we have the time evolution of the wave function. All you really need to know is that $\hat{H}$ is a linear operator (in the sense of $d/dx$, or a matrix), which encodes the energetic configuration of the system under consideration. For example, if we're looking at the quantum behavior of a magnet, $\hat{H}$ will somehow involve the spins of each particle. In a molecular system - which is what we'll be mostly concerned with - it will involve the positions of the electrons and nuclei that make up the molecule. 
 
-All in all, the Schrödinger equation tells us that the time evolution of quantum mechanical particle is governed by its energy. This is actually exactly the case in classical mechanics, although the equations are a little different. One important difference is that, where the classical state of a system is encoded by the positions and momenta \(\mathbf{x}_i\) and \(mathbf{p}_i\) of the particles in the system, the quantum state is fully encoded by the wave function \(\Psi\). What \(\Psi\) exactly means is not important; all that we need to know is that given \(\Psi\), we have all the information about the system that we possibly can.
+All in all, the Schrödinger equation tells us that the time evolution of quantum mechanical particle is governed by its energy. This is actually exactly the case in classical mechanics, although the equations are a little different. One important difference is that, where the classical state of a system is encoded by the positions and momenta $\mathbf{x}_i$ and $mathbf{p}_i$ of the particles in the system, the quantum state is fully encoded by the wave function $\Psi$. What $\Psi$ exactly means is not important; all that we need to know is that given $\Psi$, we have all the information about the system that we possibly can.
 
-Now, how do we go about solving for \(\Psi\)? The first step is to separate the wave function into a time-dependent part and a time-independent part. I'll skip the details, but the result is that the full solution to the SE is:
+Now, how do we go about solving for $\Psi$? The first step is to separate the wave function into a time-dependent part and a time-independent part. I'll skip the details, but the result is that the full solution to the SE is:
 
 $$
   \Psi(\mathbf{x}, t) = \sum_i c_i \psi_i(\mathbf{x})e^{-iE_i t/\hbar}.
 $$
 
-Here, the functions \(\psi_i\) and the numbers \(E_i\) are solutions to the *time-independent Schrödinger equation* (TISE):
+Here, the functions $\psi_i$ and the numbers $E_i$ are solutions to the *time-independent Schrödinger equation* (TISE):
 
 $$
   \hat{H}\psi_i(\mathbf{x}) = E_i\psi_i(\mathbf{x}).
 $$
 
-The solutions to the TISE are called the *eigenfunctions* or *eigenstates* of \(\hat{H}\), and \(E_i\) are the energy eigenvalues of these states. If you've ever taken a linear algebra course, this should be familiar territory: the TISE is nothing more than an eigenvalue problem! For some more terminology, the function $\psi_i$ with the lowest associated $E_i$ is called the *ground state* of the system.
+The solutions to the TISE are called the *eigenfunctions* or *eigenstates* of $\hat{H}$, and $E_i$ are the energy eigenvalues of these states. If you've ever taken a linear algebra course, this should be familiar territory: the TISE is nothing more than an eigenvalue problem! For some more terminology, the function $\psi_i$ with the lowest associated $E_i$ is called the *ground state* of the system.
 
-The problem of solving the SE then reduces to finding the solutions to the TISE, finding the expansion coefficients \(c_i\) (for which there is a standard recipe), and forming their linear combination with the appropriate time evolution factors \(\exp(-E_i t/\hbar)\). Easy, right? Well, nope!
+The problem of solving the SE then reduces to finding the solutions to the TISE, finding the expansion coefficients $c_i$ (for which there is a standard recipe), and forming their linear combination with the appropriate time evolution factors $\exp(-E_i t/\hbar)$. Easy, right? Well, nope!
 
 ### The Electronic Structure Problem
 
-While the solution to the TISE is easy to find for some very simple systems, unfortunately real life is messy and complicated, and analytical solutions are very much impossible in the most useful cases. In principle, though, we have a recipe for solving any quantum mechanical system, so let's see how bad it gets. As I said, we'll mostly look at molecular simulations, so what does the TISE look like for a molecule containing \(N_n\) nuclei with charge \(Z_i\), and \(N_e\) electrons? For simplicity, I'll assume that the nuclei are stationary, which is a fair approximation considering that they are far more massive than the electrons. The TISE then comes down to:
+While the solution to the TISE is easy to find for some very simple systems, unfortunately real life is messy and complicated, and analytical solutions are very much impossible in the most useful cases. In principle, though, we have a recipe for solving any quantum mechanical system, so let's see how bad it gets. As I said, we'll mostly look at molecular simulations, so what does the TISE look like for a molecule containing $N_n nuclei with charge $Z_i$, and $N_e$ electrons? For simplicity, I'll assume that the nuclei are stationary, which is a fair approximation considering that they are far more massive than the electrons. The TISE then comes down to:
 
 $$
   -\frac{1}{2}\sum_{i=1}^{N_e} \nabla_i^2 \psi(\mathbf{x}) - \sum_{i=1}^{N_e}\sum_{j=1}^{N_n}\frac{Z_j}{|\mathbf{R}_j - \mathbf{x}_i|}\psi(\mathbf{x}) + \sum_{i=1}^{N_e}\sum_{j > i}^{N_e}\frac{1}{|\mathbf{x}_i - \mathbf{x}_j|}\psi(\mathbf{x}) = E\psi(\mathbf{x}).
