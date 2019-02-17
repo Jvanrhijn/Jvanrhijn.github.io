@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Quantum Monte Carlo Primer: part 1
+title: Quantum Monte Carlo Primer part 1
 ---
 {% include mathjax.html %}
 
