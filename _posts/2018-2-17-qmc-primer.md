@@ -60,7 +60,7 @@ The most useful eigenstate of \\(\hat{H}\\) is generally its ground state \\(\ps
 >  \langle H \rangle_{\psi_T} \equiv \frac{\int d^{3N_e}\mathbf{x} \psi_T^*(\mathbf{x}) \hat{H}\psi(\mathbf{x})}{\int d^{3N_e}\mathbf{x}|\psi_T(\mathbf{x})|^2} \geq E_1,
 >$$
 >
-> where the inequality is satisfied only if \\(\psi_T = \psi_1\\). 
+> where the inequality is saturated only if \\(\psi_T = \psi_1\\). 
 
 This theorem is called the variational principle. So while we can't find \\(\psi_1\\) directly, we can make an educated guess, and compute the above quantity. We can then attempt to improve our guess, and see if we reduced the value of \\(\langle H \rangle\\) for this new \\(\psi_T\\). Then we can continue this process until we see no improvements, and declare our trial function locally optimal. 
 
