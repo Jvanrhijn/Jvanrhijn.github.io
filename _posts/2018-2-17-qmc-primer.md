@@ -46,13 +46,13 @@ $$
 
 Gulp.
 
-So I don't think I need to explain why this equation is far too hopelessly complicated to solve analytically. Even with prescribed nuclear positions \(\mathbf{R}_i\), there is little hope of obtaining an exact, closed-form solution. Instead, we have to turn to clever approximate solution methods.
+So I don't think I need to explain why this equation is far too hopelessly complicated to solve analytically. Even with prescribed nuclear positions $\mathbf{R}_i$, there is little hope of obtaining an exact, closed-form solution. Instead, we have to turn to clever approximate solution methods.
 
-"Aha!", I hear you think. "I've taken a course on numerical solutions to PDEs! All we have to do is set up a spatial grid in \(3N_e\) dimensions, figure out some implicit scheme, and we're done!". If only life were so simple. If we wanted to get a certain prescribed accuracy, we need to use \(N\) grid points for each spatial dimension. Since there are \(3N\) dimensions, it's easy to see that a simple PDE solving scheme nets us an exponential time complexity, any computational scientist's worst nightmare. We'll have to be a bit smarter than that.
+"Aha!", I hear you think. "I've taken a course on numerical solutions to PDEs! All we have to do is set up a spatial grid in $3N_e$ dimensions, figure out some implicit scheme, and we're done!". If only life were so simple. If we wanted to get a certain prescribed accuracy, we need to use $N$ grid points for each spatial dimension. Since there are $3N$ dimensions, it's easy to see that a simple PDE solving scheme nets us an exponential time complexity, any computational scientist's worst nightmare. We'll have to be a bit smarter than that.
 
 ### The Variational Principle
 
-The most useful eigenstate of \(\hat{H}\) is generally its ground state \(\psi_1\). Most molecules in nature will be found in approximately this state, meaning that the expansion coefficient \(c_1 > c_i\), \(i = 2, 3, \dots\). That cuts down our work significantly, but we still have this exponential complexity issue. As it turns out, while we can't find the numerically exact solution by directly solving the TISE, we can instead "guess" a solution. There then exists a theorem that tells us how "good" our solution is:
+The most useful eigenstate of $\hat{H}$ is generally its ground state $\psi_1$. Most molecules in nature will be found in approximately this state, meaning that the expansion coefficient $c_1 > c_i$, $i = 2, 3, \dots$. That cuts down our work significantly, but we still have this exponential complexity issue. As it turns out, while we can't find the numerically exact solution by directly solving the TISE, we can instead "guess" a solution. There then exists a theorem that tells us how "good" our solution is:
 
 > For any trial function $\psi_T$ that conforms to the boundary conditions imposed by our system, we have that
 
@@ -62,6 +62,6 @@ $$
 
 > where the inequality is satisfied only if \(psi_T = \psi_1\). 
 
-This theorem is called the variational principle. So while we can't find \(\psi_1\) directly, we can make an educated guess, and compute the above quantity. We can then attempt to improve our guess, and see if we reduced the value of \(\langle H \rangle\) for this new \(\psi_T\). Then we can continue this process until we see no improvements, and declare our trial function locally optimal. 
+This theorem is called the variational principle. So while we can't find $\psi_1$ directly, we can make an educated guess, and compute the above quantity. We can then attempt to improve our guess, and see if we reduced the value of $\langle H \rangle$ for this new $\psi_T$. Then we can continue this process until we see no improvements, and declare our trial function locally optimal. 
 
-This is a lot better: instead of solving a \(3N_e\)-dimensional PDE, we just have to compute two \(3N_e\)-dimensional integrals iteratively. Unfortunately, this is still plagued by the same problem of dimensionality: if we use a grid-based numerical integraion algorithm, like Simpson's rule, the accuracy falls off with the number of dimensions in - again - an exponential fashion. Luckily, there exist methods for computing high-dimensional integrals whose accuracy does not depend on the number of dimenions: Monte Carlo integration.
+This is a lot better: instead of solving a $3N_e$-dimensional PDE, we just have to compute two $3N_e$-dimensional integrals iteratively. Unfortunately, this is still plagued by the same problem of dimensionality: if we use a grid-based numerical integraion algorithm, like Simpson's rule, the accuracy falls off with the number of dimensions in - again - an exponential fashion. Luckily, there exist methods for computing high-dimensional integrals whose accuracy does not depend on the number of dimenions: Monte Carlo integration.
