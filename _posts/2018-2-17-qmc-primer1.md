@@ -41,7 +41,7 @@ The problem of solving the SE then reduces to finding the solutions to the TISE,
 While the solution to the TISE is easy to find for some very simple systems, unfortunately real life is messy and complicated, and analytical solutions are very much impossible in the most useful cases. In principle, though, we have a recipe for solving any quantum mechanical system, so let's see how bad it gets. As I said, we'll mostly look at molecular simulations, so what does the TISE look like for a molecule containing \\(N_n\\) nuclei with charge \\(Z_i\\), and \\(N_e\\) electrons? For simplicity, I'll assume that the nuclei are stationary, which is a fair approximation considering that they are far more massive than the electrons. The TISE then comes down to:
 
 $$
-  -\frac{1}{2}\sum_{i=1}^{N_e} \nabla_i^2 \psi(\mathbf{x}) - \sum_{i=1}^{N_e}\sum_{j=1}^{N_n}\frac{Z_j}{|\mathbf{R}_j - \mathbf{x}_i|}\psi(\mathbf{x}) + \sum_{i=1}^{N_e}\sum_{j > i}^{N_e}\frac{1}{|\mathbf{x}_i - \mathbf{x}_j|}\psi(\mathbf{x}) = E\psi(\mathbf{x}).
+  \left(-\frac{1}{2}\sum_{i=1}^{N_e} \nabla_i^2  - \sum_{i=1}^{N_e}\sum_{j=1}^{N_n}\frac{Z_j}{|\mathbf{R}_j - \mathbf{x}_i|} + \sum_{i=1}^{N_e}\sum_{j > i}^{N_e}\frac{1}{|\mathbf{x}_i - \mathbf{x}_j|}\right)\psi(\mathbf{x}) = E\psi(\mathbf{x}).
 $$
 
 Gulp.
