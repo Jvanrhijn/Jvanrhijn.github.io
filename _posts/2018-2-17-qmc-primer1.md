@@ -48,7 +48,7 @@ Gulp.
 
 So I don't think I need to explain why this equation is far too hopelessly complicated to solve analytically. Even with prescribed nuclear positions \\(\mathbf{R}_i\\), there is little hope of obtaining an exact, closed-form solution. Instead, we have to turn to clever approximate solution methods.
 
-"Aha!", I hear you think. "I've taken a course on numerical solutions to PDEs! All we have to do is set up a spatial grid in \\(3N_e\\) dimensions, figure out some implicit scheme, and we're done!". If only life were so simple. If we want to get a certain prescribed accuracy, we need to use \\(n\\) grid points for each spatial dimension. Since there are \\(3N_e\\) dimensions, it's easy to see that a simple PDE solving scheme nets us an exponential time complexity in $N_e$, any computational scientist's worst nightmare. We'll have to be a bit smarter than that.
+"Aha!", I hear you think. "I've taken a course on numerical solutions to PDEs! All we have to do is set up a spatial grid in \\(3N_e\\) dimensions, figure out some implicit scheme, and we're done!". If only life were so simple. If we want to get a certain prescribed accuracy, we need to use \\(n\\) grid points for each spatial dimension. Since there are \\(3N_e\\) dimensions, it's easy to see that a simple PDE solving scheme nets us an exponential time complexity in \\(N_e\)), any computational scientist's worst nightmare. We'll have to be a bit smarter than that.
 
 ### The Variational Principle
 
