@@ -57,7 +57,7 @@ The most useful eigenstate of \\(\hat{H}\\) is generally its ground state \\(\ps
 > For any trial function \\(\psi_T\\) that conforms to the boundary conditions imposed by our system, we have that
 >
 >$$
->  \langle H \rangle_{\psi_T} \equiv \frac{\int d^{3N_e}\mathbf{x} \psi_T^*(\mathbf{x}) \hat{H}\psi(\mathbf{x})}{\int d^{3N_e}\mathbf{x}|\psi(\mathbf{x})|^2} \geq E_1,
+>  \langle H \rangle_{\psi_T} \equiv \frac{\int d^{3N_e}\mathbf{x} \psi_T^*(\mathbf{x}) \hat{H}\psi(\mathbf{x})}{\int d^{3N_e}\mathbf{x}|\psi_T(\mathbf{x})|^2} \geq E_1,
 >$$
 >
 > where the inequality is satisfied only if \\(\psi_T = \psi_1\\). 
