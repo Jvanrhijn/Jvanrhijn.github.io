@@ -34,7 +34,7 @@ $$
 
 The solutions to the TISE are called the *eigenfunctions* or *eigenstates* of \\(\hat{H}\\), and \\(E_i\\) are the energy eigenvalues of these states. If you've ever taken a linear algebra course, this should be familiar territory: the TISE is nothing more than an eigenvalue problem! For some more terminology, the function \\(\psi_i\\) with the lowest associated \\(E_i\\) is called the *ground state* of the system.
 
-The problem of solving the SE then reduces to finding the solutions to the TISE, finding the expansion coefficients \\(c_i\\) (for which there is a standard recipe), and forming their linear combination with the appropriate time evolution factors \\(\exp(-E_i t/\hbar)\\). Easy, right? Well, nope!
+The problem of solving the SE then reduces to finding the solutions to the TISE, finding the expansion coefficients \\(c_i\\) (for which there is a standard recipe), and forming their linear combination with the appropriate time evolution factors \\(\exp(-E_i t/\hbar)\\). Easy, right? Well...
 
 ### The Electronic Structure Problem
 
