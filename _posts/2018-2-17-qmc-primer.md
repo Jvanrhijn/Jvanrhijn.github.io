@@ -55,12 +55,12 @@ So I don't think I need to explain why this equation is far too hopelessly compl
 The most useful eigenstate of \\(\hat{H}\\) is generally its ground state \\(\psi_1\\). Most molecules in nature will be found in approximately this state, meaning that the expansion coefficient \\(c_1 > c_i\\), \\(i = 2, 3, \dots\\). That cuts down our work significantly, but we still have this exponential complexity issue. As it turns out, while we can't find the numerically exact solution by directly solving the TISE, we can instead "guess" a solution. There then exists a theorem that tells us how "good" our solution is:
 
 > For any trial function \\(\psi_T\\) that conforms to the boundary conditions imposed by our system, we have that
-
+>
 >$$
 >  \langle H \rangle_{\psi_T} \equiv \frac{\int d^{3N_e}\mathbf{x} \psi_T(\mathbf{x})^* \hat{H}\psi(\mathbf{x})}{\int d^{3N_e}\mathbf{x}|\psi(\mathbf{x})|^2} \geq E_1,
 >$$
-
-> where the inequality is satisfied only if \\(psi_T = \psi_1\\). 
+>
+> where the inequality is satisfied only if \\(\psi_T = \psi_1\\). 
 
 This theorem is called the variational principle. So while we can't find \\(\psi_1\\) directly, we can make an educated guess, and compute the above quantity. We can then attempt to improve our guess, and see if we reduced the value of \\(\langle H \rangle\\) for this new \\(\psi_T\\). Then we can continue this process until we see no improvements, and declare our trial function locally optimal. 
 
