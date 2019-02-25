@@ -38,7 +38,7 @@ integral!**
 Now, there is one extra complication here. If we sample points \\(x_i\\) uniformly, the
 integral may converge very slowly if \\(f\\) is zero over a large portion of \\(I\\).
 To be more efficient, we should instead sample points from a probability distribution
-that that converges to \\(f\\). So we assume some distribution \\(\rho(x)\)), and write
+that that matches \\(f\\). So we assume some distribution \\(\rho(x)\\), and write
 
 $$
   (b - a)\langle f \rangle_I = \int_I \rho(x) \frac{f(x)}{\rho(x)}dx.
