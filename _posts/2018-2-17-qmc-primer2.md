@@ -92,7 +92,7 @@ $$
 The variational integral then becomes
 
 $$
-  \langle H \rangle = \langle E_L \rangle = \int \rho(x)E_L(x_) d^{3N}x.
+  \langle H \rangle = \langle E_L \rangle = \int \rho(x)E_L (x) d^{3N}x.
 $$
 
 Now this is what we're looking for! All we now need to do is apply the
