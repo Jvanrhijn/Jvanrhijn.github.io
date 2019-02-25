@@ -44,7 +44,7 @@ $$
   (b - a)\langle f \rangle_I = \int_I \rho(x) \frac{f(x)}{\rho(x)}dx.
 $$
 
-If we now sample \\(f(x)/\rho(x)\\) according to the distribution \\(\rho\)), the value
+If we now sample \\(f(x)/\rho(x)\\) according to the distribution \\(\rho\\), the value
 of the integral clearly remains the same, but it will be sampled much more efficiently.
 
 In practice, we sample points from \\(I\\) using a Markov chain.
